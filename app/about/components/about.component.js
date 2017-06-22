@@ -10,7 +10,7 @@ const about = {
 <h3> We are super duper cool </h3>`
 };
 
-angular.module('bc-site.about')
+angular.module('5340-site.about')
 	.component('about', about);
 
 about.$inject = [];

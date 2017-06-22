@@ -1,1 +1,1 @@
-angular.module('bc-site.login', []);
+angular.module('5340-site.login', []);

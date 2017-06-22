@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="bc-site">
+<html ng-app="5340-site">
 
 <head>
     <title>Bootcampers Collective</title>
@@ -27,11 +27,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"> </script>
 </head>
 <body>
-      <!--UNCOMMENT THE LINKS ONCE WE HAVE OUR VERSION 1 READY TO BE DEPLOYED-->
-      <!-- <a ng-href="#/">home</a>
-           <a ng-href="#/about">about</a>
-           <a ng-href="#/auth">login</a>
-           <a ng-href="#/events">events</a> -->
+        <a ui-sfer="home" ui-sref-active="active">home</a>
+        <a ui-sref="about" ui-sref-active="active">about</a>
+        <a ui-sref="auth" ui-sref-active="active">login</a>
+        <a ui-sref="events" ui-sref-active="active">events</a>
     <ui-view>
         <div><h1>Test</h1></div>
     </ui-view>

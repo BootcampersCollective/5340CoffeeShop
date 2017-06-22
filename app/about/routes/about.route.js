@@ -7,7 +7,7 @@ function aboutRoute($stateProvider) {
 		});
 }
 
-angular.module('bc-site.about')
+angular.module('5340-site.about')
 	.config(aboutRoute);
 
 aboutRoute.$inject = ['$stateProvider'];

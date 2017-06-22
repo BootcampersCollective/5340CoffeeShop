@@ -1,1 +1,1 @@
-angular.module('bc-site.widgets', []);
+angular.module('5340-site.widgets', []);

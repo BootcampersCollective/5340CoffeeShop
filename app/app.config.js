@@ -1,9 +1,9 @@
 function bcSiteConfig($locationProvider, $urlRouterProvider){
-	$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(false);
 	$urlRouterProvider.otherwise('/');
 }
 
-angular.module('bc-site')
+angular.module('5340-site')
 	.config(bcSiteConfig);
 
 bcSiteConfig.$inject = ['$locationProvider', '$urlRouterProvider'];

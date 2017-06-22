@@ -1,8 +1,8 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAK;EACD,WAAW,EAAE,oBAAoB;;AAGrC,KAAM;EACF,SAAS,EAAE,yBAAyB;EACpC,yBAAyB,EAAE,CAAC;EAC5B,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,KAAK;EACd,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,EAAE;EACd,aAAa,EAAE,EAAE;EACjB,KAAK,EAAE,MAAM;EACb,aAAa,EAAE,IAAI;;AAGvB,OAAQ;EACJ,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,IAAI;;AAGhB,IAAK;EACJ,KAAK,EAAC,GAAG;EACT,MAAM,EAAC,GAAG;;AAGX,MAAO;EACL,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,KAAK;;AAGd,WAAY;EACV,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;EACnB,oBAAoB;;AAGtB,YAAa;EACX,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;EACnB,oBAAoB;;AAGtB,kBAAmB;EACjB,UAAU,EAAE,EAAE;EACd,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,KAAK;;AAGd,iBAYC;EAXC,EAAG;IACF,OAAO,EAAE,CAAC;EAGX,GAAI;IACF,OAAO,EAAE,CAAC;EAGZ,IAAK;IACJ,OAAO,EAAE,CAAC;AC/Db,yBAA0B;EACxB,QAAS;IACP,OAAO,EAAE,IAAI;AAIjB,yBAA0B;EACxB,OAAQ;IACN,OAAO,EAAE,IAAI;ACRjB,IAAK;EACH,gBAAgB,EAAE,OAAO",
-"sources": ["app/placeholder/placeholder.scss","app/event/event.scss","app/layout/styles/_layout.scss"],
-"sourcesContent": ["body {\n    font-family: 'Roboto', sans-serif;\n}\n\n#logo {\n    animation: fadeIn 2.999s ease-in-out;\n    animation-iteration-count: 3;\n    width: auto;\n    height: 40vw;\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    margin-top: 5%;\n    margin-bottom: 5%;\n    float: center;\n    border-radius: 10px;\n}\n\nsection {\n    text-align: center;\n    height: 3 vw;\n}\n\n.fit {\n\twidth:50%;\n\theight:50%;\n}\n\n#email {\n  height: 3vh;\n  width: 100vw;\n}\n\n#emailInput {\n  width: 20vw;\n  height: auto;\n  border-radius: 10px;\n  /*font-size: 18px;*/\n}\n\n#emailSubmit {\n  width: 8vw;\n  height: auto;\n  border-radius: 10px;\n  /*font-size: 18px;*/\n}\n\n#emailSubmit:hover {\n  transition: 1s;\n  background-color: black;\n  color: white;\n}\n\n@keyframes fadeIn {\n  0% {\n   opacity: 0;\n  }\n\n  50% {\n    opacity: 1;\n  }\n\n  100% {\n   opacity: 0;\n  }\n}\n","@media (max-width: 550px) {\n  .desktop {\n    display: none;\n  }\n}\n\n@media (min-width: 550px) {\n  .mobile {\n    display: none;\n  }\n}\n","body {\n  background-color: #5bc0de;\n}"],
+"mappings": "",
+"sources": [],
+"sourcesContent": [],
 "names": [],
 "file": "main.css"
 }

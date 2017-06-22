@@ -12,7 +12,7 @@ const layoutComponent = {
 <footer-component></footer-component>`
 };
 
-angular.module('bc-site.layout')
+angular.module('5340-site.layout')
 	.component('layoutComponent', layoutComponent);
 
 layoutComponent.$inject = [];

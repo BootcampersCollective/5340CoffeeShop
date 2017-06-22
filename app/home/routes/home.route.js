@@ -7,7 +7,7 @@ function homeRoute ($stateProvider) {
 		});
 }
 
-angular.module('bc-site.home')
+angular.module('5340-site.home')
 .config(homeRoute);
 
 homeRoute.$inject = ['$stateProvider'];

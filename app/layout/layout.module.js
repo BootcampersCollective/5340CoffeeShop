@@ -1,1 +1,1 @@
-angular.module('bc-site.layout', []);
+angular.module('5340-site.layout', []);

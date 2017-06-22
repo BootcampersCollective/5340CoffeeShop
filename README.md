@@ -1,7 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/BootcampersCollective/5340CoffeeShop.png?label=ready&title=Ready)](https://waffle.io/BootcampersCollective/5340CoffeeShop)
 
-# 5340 Coffee Shop
-Repository for the 5340 Coffee Shop website.
+# 5340 Coffee and Events
+Repository for the 5340 Coffee and Events website.
 
 ## Technologies Used:
 
@@ -44,14 +44,14 @@ Repository for the 5340 Coffee Shop website.
 
 ## Page Structure:
 
-1. Place Holder -- this will be deployed as a placeholder while we build the website.
+1. Landing Page aka Main Page -- this will be the page the home page of the website. It should be clean and simple with address, phone, and hours of operation in the bottom left, in the top left should be the nav bar, in the top right should be the Facebook, Twitter, and Email links, and in the bottom right should be "Powered by Bootcampers Collective" w/ a logo.
 
-2. Log In page -- log in page for members of the collective. Username, password, security question.
+2. Events -- This page will house all of the events that will be coming up at 5340. It should integrate with 5340 Facebook.
 
-3. Events page -- a place to show internal and external events, potential api integration
+3. Menu -- a place to show the shops menu.
 
-4. Profile page -- a profile page with picture, technology stack, want to learns.
+4. About -- a page to talk about the coffee shop and what they stand for.
 
-5. Projects page -- a place to show off our projects that we've built and what our members have built with an input for community outreach.
+5. Get Here -- This page should show a little explanation of where they are located with a link to maps, plus their address, contact info, and hours of operation, plus a map of wher they are.
 
 6. About Us page

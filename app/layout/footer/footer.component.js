@@ -6,7 +6,7 @@ const footerComponent = {
 	template: `<div>footer</div>`
 };
 
-angular.module('bc-site.layout')
+angular.module('5340-site.layout')
 .component('footerComponent', footerComponent);
 
 footerComponent.$inject = [];

@@ -106,7 +106,7 @@ const loginComponent = {
 </div>`
 };
 
-angular.module('bc-site.login')
+angular.module('5340-site.login')
 	.component('loginComponent', loginComponent);
 
 loginComponent.$inject = ['$state', 'authService', 'errorService'];

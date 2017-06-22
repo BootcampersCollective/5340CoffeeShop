@@ -1,4 +1,4 @@
-function bcMenuBar() {
+function coffeeMenuBar() {
 	const directive = {
 		link: link,
 		restrict: 'EA',
@@ -12,5 +12,5 @@ function bcMenuBar() {
 }
 
 angular
-	.module('bc-site.widgets')
-	.directive('bcMenuBar', bcMenuBar);
+	.module('5340-site.widgets')
+	.directive('coffeeMenuBar', coffeeMenuBar);

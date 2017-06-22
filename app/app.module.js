@@ -1,9 +1,10 @@
-angular.module('bc-site', [
+angular.module('5340-site', [
     'ui.router',
-	'bc-site.login',
-	'bc-site.layout',
-	'bc-site.common',
-    'bc-site.widget',
-    'bc-site.home',
-    'bc-site.about'
+	  '5340-site.login',
+	  '5340-site.layout',
+	  '5340-site.common',
+      '5340-site.widgets',
+      '5340-site.home',
+      '5340-site.about',
+      '5340-site.events'
 ]);
