@@ -52,6 +52,6 @@ Repository for the 5340 Coffee and Events website.
 
 4. About -- a page to talk about the coffee shop and what they stand for.
 
-5. Get Here -- This page should show a little explanation of where they are located with a link to maps, plus their address, contact info, and hours of operation, plus a map of wher they are.
+5. Get Here -- This page should show a little explanation of where they are located with a link to maps, plus their address, contact info, and hours of operation, plus a map of where they are.
 
-6. About Us page
+6. Heres an example to base off of: http://www.twentyandsix.com.au/
