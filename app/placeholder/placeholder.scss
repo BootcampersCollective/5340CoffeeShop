@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo {
+    animation: fadeIn 2.999s ease-in-out;
+    animation-iteration-count: 3;
+    width: auto;
+    height: 40vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    float: center;
+    border-radius: 10px;
+}
+
+section {
+    text-align: center;
+    height: 3 vw;
+}
+
+.fit {
+	width:50%;
+	height:50%;
+}
+
+#email {
+  height: 3vh;
+  width: 100vw;
+}
+
+#emailInput {
+  width: 20vw;
+  height: auto;
+  border-radius: 10px;
+  /*font-size: 18px;*/
+}
+
+#emailSubmit {
+  width: 8vw;
+  height: auto;
+  border-radius: 10px;
+  /*font-size: 18px;*/
+}
+
+#emailSubmit:hover {
+  transition: 1s;
+  background-color: black;
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+   opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+   opacity: 0;
+  }
+}
