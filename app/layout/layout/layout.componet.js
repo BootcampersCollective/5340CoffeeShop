@@ -7,7 +7,7 @@ const layoutComponent = {
 			console.log('init layout');
 		};
 	},
-	template: `<header-component></header-component>
+	template: `<header-component class="comp1"></header-component>
 <body-component></body-component>
 <footer-component></footer-component>`
 };
