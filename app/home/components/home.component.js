@@ -11,8 +11,7 @@ const home = {
 		};
 		ctrl.$postLink = function () {};
 	},
-	template: `<h1 class="home-title">{{$ctrl.title}}</h1>
-<layout-component></layout-component>`
+	template: `<h1 class="home-title">{{$ctrl.title}}</h1>`
 };
 
 angular.module('5340-site.home')

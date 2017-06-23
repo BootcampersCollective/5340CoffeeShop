@@ -4,6 +4,7 @@ angular.module('5340-site', [
 	  '5340-site.layout',
 	  '5340-site.common',
       '5340-site.widgets',
+      '5340-site.base',
       '5340-site.home',
       '5340-site.about',
       '5340-site.events'
