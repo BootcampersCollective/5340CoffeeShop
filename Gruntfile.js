@@ -70,7 +70,10 @@ module.exports = function (grunt) {
             }
         },
         watch : {
-        
+	        src: {
+		        files: ['app/**/*.js', 'app/**/*.scss'],
+		        tasks: ['build']
+	        }
         }
     });
 
@@ -88,5 +91,4 @@ module.exports = function (grunt) {
 	    'concat:angular',
         'sass'
     ]);
-    grunt.registerTask('watch', []);
 };
