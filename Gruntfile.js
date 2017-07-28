@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         concat: {
             vendor:{
                 src: [
-                    'node_modules/jquery.js',
+                    'node_modules/jquery/dist/jquery.js',
                     'node_modules/angular/angular.js',
                     'node_modules/angular-ui-router/release/angular-ui-router.js',
 	                'node_modules/angular-ui-router/release/stateEvents.js',
@@ -65,13 +65,13 @@ module.exports = function (grunt) {
 		            sourcemap: 'inline'
 	            },
 	            files: {
-		            'public/css/main.css': 'app/main.scss'
+		            'public/css/main.css': 'sass/main.scss'
 	            }
             }
         },
         watch : {
 	        src: {
-		        files: ['app/**/*.js', 'app/**/*.scss'],
+		        files: ['app/**/*.js', 'sass/**/*.scss', 'assets/index.html', 'GruntFile.js'],
 		        tasks: ['build']
 	        }
         }

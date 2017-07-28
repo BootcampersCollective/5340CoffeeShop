@@ -3,7 +3,7 @@ const footerComponent = {
 	controller: function () {
 
 	},
-	template: `<div>footer</div>`
+	template: `<div class="container-footer">footer</div>`
 };
 
 angular.module('5340-site.layout')
