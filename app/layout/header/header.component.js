@@ -3,8 +3,9 @@ const headerComponent = {
 	controller: function () {
 
 	},
-	template: `<div>Header</div>
-<div class="container-menu"></div>`
+	template: `<div class="container-menu">
+<div>Header</div>
+</div>`
 };
 
 angular.module('5340-site.layout')
