@@ -10,6 +10,8 @@
   .container-left {
     flex: 0 0 auto;
     flex-direction: column;
+    align-items: center;
+    display: flex;
 
     @include breakpoint($bp-768){
       flex: 0 0 200px;
@@ -18,10 +20,12 @@
     }
 
     .container-menu {
+      height: 80vh;
       flex: 5 0 auto;
     }
 
     .container-footer {
+      height: 20vh;
       flex: 1 0 auto;
     }
   }
