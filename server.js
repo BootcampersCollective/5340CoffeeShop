@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost/5340CoffeeShop', function(errorTime){
 });
 
 app.get('*', function (req, res) {
-    res.sendFile(fileServer + '/index.html');
+    res.sendFile(__dirname, fileServer + '/index.html');
 });
 
 // call our routes
