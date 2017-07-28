@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         },
         watch : {
 	        src: {
-		        files: ['app/**/*.js', 'sass/**/*.scss'],
+		        files: ['app/**/*.js', 'sass/**/*.scss', 'assets/index.html', 'GruntFile.js'],
 		        tasks: ['build']
 	        }
         }
