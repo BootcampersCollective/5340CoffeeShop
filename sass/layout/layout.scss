@@ -1,23 +1,36 @@
-body {
+.container-main {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  flex-wrap: nowrap;
 
   @include breakpoint($bp-768) {
-    flex-flow: row;
+    flex-direction: row;
   }
 
   .container-left {
-
+    flex: 0 0 auto;
+    flex-direction: column;
 
     @include breakpoint($bp-768){
-      min-width: 200px;
+      flex: 0 0 200px;
+      height: 100vh;
+      justify-content: stretch;
+    }
 
+    .container-menu {
+      flex: 5 0 auto;
+    }
+
+    .container-footer {
+      flex: 1 0 auto;
     }
   }
 
   .container-right {
+    flex: 0 0 auto;
 
     @include breakpoint($bp-768) {
+      flex: 1 0 auto;
 
     }
   }
