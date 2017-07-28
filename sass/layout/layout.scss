@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  flex-flow: column;
+
+  @include breakpoint($bp-768) {
+    flex-flow: row;
+  }
+
+  .container-left {
+
+
+    @include breakpoint($bp-768){
+      min-width: 200px;
+
+    }
+  }
+
+  .container-right {
+
+    @include breakpoint($bp-768) {
+
+    }
+  }
+}

@@ -65,13 +65,13 @@ module.exports = function (grunt) {
 		            sourcemap: 'inline'
 	            },
 	            files: {
-		            'public/css/main.css': 'app/main.scss'
+		            'public/css/main.css': 'sass/main.scss'
 	            }
             }
         },
         watch : {
 	        src: {
-		        files: ['app/**/*.js', 'app/**/*.scss'],
+		        files: ['app/**/*.js', 'sass/**/*.scss'],
 		        tasks: ['build']
 	        }
         }
