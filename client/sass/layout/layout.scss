@@ -1,0 +1,43 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  @include breakpoint($bp-768) {
+    flex-direction: row;
+  }
+
+  .container-left {
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    @include breakpoint($bp-768){
+      flex: 0 0 200px;
+      height: 100vh;
+      justify-content: stretch;
+    }
+
+    .container-menu {
+      height: 80vh;
+      width: 100%;
+      background-color: #31b0d5;
+    }
+
+    .container-footer {
+      height: 20vh;
+      width: 100%;
+      background-color: limegreen;
+    }
+  }
+
+  .container-right {
+    flex: 0 0 auto;
+
+    @include breakpoint($bp-768) {
+      flex: 1 0 auto;
+
+    }
+  }
+}
