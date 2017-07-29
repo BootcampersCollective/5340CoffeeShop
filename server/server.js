@@ -26,10 +26,6 @@ mongoose.connect('mongodb://localhost/5340CoffeeShop', function(errorTime){
         :    console.log('SQUAWK');
 });
 
-app.get('*', function (req, res) {
-    res.sendFile(__dirname, fileServer + '/index.html');
-});
-
 // call our routes
 routes(app);
 
