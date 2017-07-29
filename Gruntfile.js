@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
     'use strict';
-    
+
     grunt.initConfig({
         clean: [
             'public/images/*',
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'client/assets/images/',
+                        cwd: 'client/assets/Images/',
                         src: ['**'],
                         dest: 'public/images'
                     },

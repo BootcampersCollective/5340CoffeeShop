@@ -11,7 +11,12 @@ const home = {
 		};
 		ctrl.$postLink = function () {};
 	},
-	template: `<h1 class="home-title">{{$ctrl.title}}</h1>`
+	template: `<h1 class="home-title">{{$ctrl.title}}</h1>
+	<div id="background-img" class="main-container">
+		<img src="images/coffee_outside.jpg"/>
+	</div>
+	`
+
 };
 
 angular.module('5340-site.home')
