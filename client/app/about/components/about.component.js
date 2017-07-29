@@ -6,13 +6,12 @@ const about = {
 		ctrl.$onInit = function () {};
 
 	},
-	template: `<h1> About </h1>
-<h3> We are super duper cool </h3>
+	template: `<h1>About</h1>
 
 <h2>Newsletter</h2>
 <p>Subscribe to our newsletter</p>
 <form>
-    <input type="email" ng-model="">
+    <input type="email" ng-model="$ctrl.newsletter.email">
     <button ng-click="">Sign Me Up!</button>
 </form>`
 };
