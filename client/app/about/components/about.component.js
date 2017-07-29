@@ -4,7 +4,6 @@ const about = {
         let ctrl = this;
 
         ctrl.$onInit = function () {};
-
     },
     template:   `<h1> About 5340 Coffee and Events </h1>
                 <h3> Family-owned, friendly, comfortable, community-minded. </h3>
@@ -22,7 +21,15 @@ const about = {
                     <li> Delivery through DeliveryDudes.com </li>
                     <li> Shop is available for private events </li>
                     <li> Rewards for loyal customers with the free and easy Perka <br> app available in the App Store or at Google Play.  </li>
-                </ul>`
+                </ul>
+                <br>
+                <h2>Newsletter</h2>
+                <p>Subscribe to our newsletter</p>
+                <form>
+                    <input type="email" ng-model="$ctrl.newsletter.email">
+                    <button ng-click="">Sign Me Up!</button>
+                </form>`
+
 };
 
 angular.module('5340-site.about')
