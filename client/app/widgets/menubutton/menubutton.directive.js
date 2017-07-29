@@ -3,17 +3,13 @@ function coffeeMenuButton() {
 		link: link,
 		restrict: 'EA',
 		template: `<div class="menu-button">
-    <a ui-sref="{{sref}}">{{name}}</a>
+    <a ui-sref="{{button.sref}}">{{button.name}}</a>
 </div>`,
 	};
 	return directive;
 
 	function link(scope, element, attrs) {
-		console.log('coffeeMenuButton attrs', attrs.data);
-
-		scope.name = attrs.data.name;
-		console.log('coffeeMenuButton scope.name', scope.name);
-		scope.sref = attrs.data.sref;
+		scope.button = scope.$eval(attrs.data);
 	}
 }
 
