@@ -5,8 +5,8 @@ function coffeeMenuBar() {
 		template: `<div class="menu-bar">
     <h1>Menu Bar</h1>
     <coffee-menu-button data="{{button}}" ng-repeat="button in menuButtons"></div>
-		<div><a href="https://www.facebook.com/5340Coffee/"><img src="images/46-facebook-512.png" alt="facebook"/></a>
-		<a href="https://twitter.com/40weightarvada?lang=en">Twitter</a>
+		<div><a href="https://www.facebook.com/5340Coffee/"><img src="images/facebook.png" alt="facebook" /></a>
+		<a href="https://twitter.com/40weightarvada?lang=en"><img src="images/twitter.png" alt="twitter" /></a>
 		</div>
 </div>`,
 	};
