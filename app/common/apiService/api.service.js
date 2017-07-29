@@ -23,7 +23,7 @@ function apiService($q, $http) {
 	}
 }
 
-angular.module('app')
+angular.module('5340-site.common')
 	.factory('apiService', apiService);
 
 apiService.$inject = ['$q', '$http'];
