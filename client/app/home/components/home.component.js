@@ -13,7 +13,6 @@ const home = {
 	},
 	template: `
 		<img id="background-img" src="images/coffee_outside.jpg"/>
-	</div>
 	`
 
 };
