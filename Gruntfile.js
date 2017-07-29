@@ -25,8 +25,8 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 src: [
-                    'app/**/*.module.js',
-                    'app/**/*.js'
+                    'client/app/**/*.module.js',
+                    'client/app/**/*.js'
                 ],
                 dest: 'public/js/bundle.js'
             }
@@ -37,14 +37,14 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        cwd: 'assets',
+                        cwd: 'client/assets',
                         src: ['index.html'],
                         dest: 'public',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
-                        cwd: 'assets/images/',
+                        cwd: 'client/assets/images/',
                         src: ['**'],
                         dest: 'public/images'
                     },
@@ -65,13 +65,13 @@ module.exports = function (grunt) {
 		            sourcemap: 'inline'
 	            },
 	            files: {
-		            'public/css/main.css': 'sass/main.scss'
+		            'public/css/main.css': 'client/sass/main.scss'
 	            }
             }
         },
         watch : {
 	        src: {
-		        files: ['app/**/*.js', 'sass/**/*.scss', 'assets/index.html', 'GruntFile.js'],
+		        files: ['client/app/**/*.js', 'client/sass/**/*.scss', 'client/assets/index.html', 'GruntFile.js'],
 		        tasks: ['build']
 	        }
         }
