@@ -1,16 +1,31 @@
 const about = {
-	bindings: {},
-	controller: function () {
-		let ctrl = this;
+    bindings: {},
+    controller: function () {
+        let ctrl = this;
 
-		ctrl.$onInit = function () {};
+        ctrl.$onInit = function () {};
 
-	},
-	template: `<h1> About </h1>
-<h3> We are super duper cool </h3>`
+    },
+    template:   `<h1> About 5340 Coffee and Events </h1>
+                <h3> Family-owned, friendly, comfortable, community-minded. </h3>
+                <h3> That's 5340 Coffee & Events! </h3>
+                <ul>
+                    <li> Gourmet coffee & espresso drinks </li>
+                    <li> Chais, teas, blended drinks </li>
+                    <li> Pastries, burritos, oatmeal </li>
+                    <li> Comfortable seating for over 60 </li>
+                    <li> Free meeting room </li>
+                    <li> Games, books, magazines </li>
+                    <li> Free WiFi </li>
+                    <li> Coffee beans by the pound </li>
+                    <li> Catering for meetings & parties </li>
+                    <li> Delivery through DeliveryDudes.com </li>
+                    <li> Shop is available for private events </li>
+                    <li> Rewards for loyal customers with the free and easy Perka <br> app available in the App Store or at Google Play.  </li>
+                </ul>`
 };
 
 angular.module('5340-site.about')
-	.component('about', about);
+    .component('about', about);
 
 about.$inject = [];
