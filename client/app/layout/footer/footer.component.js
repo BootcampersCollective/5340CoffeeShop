@@ -14,7 +14,7 @@ const footerComponent = {
 
 	},
 
-	template:`<div class="container-footer">footer
+	template:`<div class="container-footer">
 		          <p> 6474 Ward Rd, Arvada, CO 80004 Today is {{$ctrl.date | date:'EEEE-MM-d'}} Today we are {{$ctrl.storeHours}}</p>
 	          </div>`
 };
