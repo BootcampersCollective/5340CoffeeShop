@@ -2,10 +2,13 @@ function coffeeMenuBar() {
 	const directive = {
 		link: link,
 		restrict: 'EA',
-		template: `<div class="menu-bar">
-    <h1>Menu Bar</h1>
-    <coffee-menu-button data="{{button}}" ng-repeat="button in menuButtons"></div>
-</div>`,
+		template: `
+            <div class="menu-bar">
+                <div id="nav-img"></div>
+                <h1>Menu Bar</h1>
+                <coffee-menu-button data="{{button}}" ng-repeat="button in menuButtons"></div>
+            </div>
+		`,
 	};
 	return directive;
 
