@@ -1,4 +1,9 @@
 .menu-bar {
   width: 100%;
 
+  .menu-button {
+  	&:hover {
+  		background-color: rgb(185, 153, 103);
+  	}
+  }
 }
