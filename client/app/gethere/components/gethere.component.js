@@ -21,20 +21,20 @@ const gethere = {
                         });
                     },
                     error: function (error) {
-                        alert('Geolocation failed: ' + error.message);
+                        console.log('Geolocation failed: ' + error.message);
                     },
                     not_supported: function () {
-                        alert("Your browser does not support geolocation");
+                        console.log("Your browser does not support geolocation");
                     }/*,
                         always: function() {
-                            alert("Done!");
+                            console.log("Done!");
                         }*/
                 });
 
             };
 
             const map = new GMaps({
-                el: '#map',
+                el: '.map',
                 lat: lat,
                 lng: lng
             });
@@ -47,15 +47,7 @@ const gethere = {
         };
 
     },
-    template: `
-  <style type="text/css">
-    #map {
-      width: 600px;
-      height: 600px;
-    }
-  </style>
-  <div id="map"></div>
-    `
+    template: `<div class="map"></div>`
 };
 
 angular.module('5340-site.gethere')
