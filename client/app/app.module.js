@@ -8,5 +8,6 @@ angular.module('5340-site', [
       '5340-site.home',
       '5340-site.about',
       '5340-site.events',
+      '5340-site.gethere'
 	'5340-site.menu'
 ]);
