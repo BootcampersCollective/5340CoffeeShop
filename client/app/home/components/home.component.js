@@ -12,9 +12,7 @@ const home = {
 		ctrl.$postLink = function () {};
 	},
 	template: `
-		<div class="home-container">
-			
-		</div>
+		
 	`
 
 };
