@@ -6,8 +6,8 @@ function coffeeMenuBar() {
                 <div id="nav-img"></div>
     <h1>Menu Bar</h1>
     <coffee-menu-button data="{{button}}" ng-repeat="button in menuButtons"></div>
-		<div><a href="https://www.facebook.com/5340Coffee/"><img src="images/facebook.png" alt="facebook" /></a>
-		<a href="https://twitter.com/40weightarvada?lang=en"><img src="images/twitter.png" alt="twitter" /></a>
+		<div><a href="https://www.facebook.com/5340Coffee/" target="_blank"><img src="images/facebook.png" alt="facebook" /></a>
+		<a href="https://twitter.com/40weightarvada?lang=en" target="_blank"><img src="images/twitter.png" alt="twitter" /></a>
 		<a href="mailto:info@40weightcoffee.com"><img src="images/email.png" alt="email" /></a>
 		</div>
 </div>`,
