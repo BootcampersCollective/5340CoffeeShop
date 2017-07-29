@@ -13,7 +13,7 @@ function coffeeMenuBar() {
 		scope.menuButtons = [
 			{
 				name: 'Home',
-				sref: 'app'
+				sref: 'app.home'
 			},
 			{
 				name: 'About',
