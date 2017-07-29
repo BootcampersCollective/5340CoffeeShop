@@ -7,7 +7,7 @@ const gethere = {
             "use strict";
             const lat = 39.81400;
             const lng = -105.1371342;
-            const dirveme = function () {
+            function driveme () {
                 GMaps.geolocate({
                     success: function (position) {
                         map.setCenter(position.coords.latitude, position.coords.longitude);
@@ -31,7 +31,7 @@ const gethere = {
                         }*/
                 });
 
-            };
+            }
 
             const map = new GMaps({
                 el: '.map',
