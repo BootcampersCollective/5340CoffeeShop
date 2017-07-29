@@ -1,6 +1,5 @@
 {
   "browserify": true,
-  "esnext": true,
   "bitwise": true,
   "camelcase": true,
   "eqeqeq": true,
@@ -17,6 +16,7 @@
   "trailing": true,
   "sub": true,
   "maxlen": 120,
+  "esversion": 6,
 
   "browser": true,
   "node": true,
