@@ -2,15 +2,15 @@ function apiService($q, $http) {
 	// This variable is for service level storage, it will not survive a browser reload
 	// let variable = {};
 	const service = {
-		getSomething: getSomething,
+		getMenu: getMenu,
 		setSomething: setSomething
 	};
 	return service;
 
-	function getSomething() {
+	function getMenu() {
 		return $http({
 			method: 'GET',
-			url: '/api/something'
+			url: '/api/menu'
 		});
 	}
 
