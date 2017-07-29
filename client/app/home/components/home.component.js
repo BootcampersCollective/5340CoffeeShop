@@ -12,7 +12,9 @@ const home = {
 		ctrl.$postLink = function () {};
 	},
 	template: `
-		<img id="background-img" src="images/coffee_outside.jpg"/>
+		<div class="home-container">
+			
+		</div>
 	`
 
 };
