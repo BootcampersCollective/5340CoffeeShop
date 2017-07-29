@@ -25,9 +25,13 @@
     }
 
     .container-menu {
-      height: 80vh;
+      height: 150px;
       width: 100%;
       background-color: #31b0d5;
+
+      @include breakpoint($bp-768){
+        height: 80vh;
+      }
     }
 
     .container-footer {
@@ -42,7 +46,8 @@
 
     @include breakpoint($bp-768) {
       flex: 1 0 auto;
-
+      height: 100vh;
+      overflow-y: scroll;
     }
   }
 }
