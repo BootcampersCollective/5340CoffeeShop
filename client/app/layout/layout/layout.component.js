@@ -15,7 +15,7 @@ const layoutComponent = {
 			<div class="container-right">
 			<body-component></body-component>
 			</div>
-			<div>
+			<div class="container-footer">
 				<footer-component></footer-component>
 			</div>
 		</div>

@@ -33,16 +33,6 @@
         height: 80vh;
       }
     }
-
-    .container-footer {
-      font-size: 20px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      height: 10vh;
-      width: 100%;
-      background-color: #B99967;
-    }
   }
 
   .container-right {
@@ -53,5 +43,9 @@
       height: 100vh;
       overflow-y: scroll;
     }
+  }
+
+  .container-footer {
+      background-color: #B99967;
   }
 }
