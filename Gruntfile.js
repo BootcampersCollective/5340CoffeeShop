@@ -14,8 +14,9 @@ module.exports = function (grunt) {
                     'node_modules/jquery/dist/jquery.js',
                     'node_modules/angular/angular.js',
                     'node_modules/angular-ui-router/release/angular-ui-router.js',
-	                'node_modules/angular-ui-router/release/stateEvents.js',
-	                'node_modules/angular-ui-router/release/resolveService.js'
+                    'node_modules/angular-ui-router/release/stateEvents.js',
+                    'node_modules/angular-ui-router/release/resolveService.js',
+                    'node_modules/angular-filter/dist/angular-filter.js'
                 ],
                 dest: 'public/js/vendor.js',
                 nonull: true
@@ -61,19 +62,19 @@ module.exports = function (grunt) {
         },
         sass: {
             main: {
-	            options: {
-		            sourcemap: 'inline'
-	            },
-	            files: {
-		            'public/css/main.css': 'client/sass/main.scss'
-	            }
+                options: {
+                    sourcemap: 'inline'
+                },
+                files: {
+                    'public/css/main.css': 'client/sass/main.scss'
+                }
             }
         },
         watch : {
-	        src: {
-		        files: ['client/app/**/*.js', 'client/sass/**/*.scss', 'client/assets/index.html', 'GruntFile.js'],
-		        tasks: ['build']
-	        }
+            src: {
+                files: ['client/app/**/*.js', 'client/sass/**/*.scss', 'client/assets/index.html', 'GruntFile.js'],
+                tasks: ['build']
+            }
         }
     });
 
@@ -86,9 +87,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean',
-	    'copy',
-	    'concat:vendor',
-	    'concat:angular',
+        'copy',
+        'concat:vendor',
+        'concat:angular',
         'sass'
     ]);
 };

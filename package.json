@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "1.6.4",
+    "angular-filter": "^0.5.16",
     "angular-ui-router": "1.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
