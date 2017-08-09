@@ -1,4 +1,5 @@
 var thingCtrl = require('./thingCtrl'),
+	menuCtrl = require('./menuCtrl'),
 	path = require('path');
 
 module.exports = (app) => {
@@ -14,8 +15,8 @@ module.exports = (app) => {
 	app.get('/api/things/:id', thingCtrl.get); // get many
 	app.post('/api/things', thingCtrl.upsert); // create
 	app.post('/api/things/:id', thingCtrl.upsert); // update
+	app.get('/api/menu', menuCtrl.get); // get menu
 	app.get('*', function (req, res) {
-		console.log('getCatchAll');
 		res.sendFile(path.resolve(__dirname + '/../../public/index.html'));
 	});
 };

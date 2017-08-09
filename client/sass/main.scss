@@ -11,10 +11,13 @@
 
 // LAYOUT
 @import "layout/layout";
+@import "layout/body";
 
 // PAGES
 @import "pages/events";
+@import "pages/gethere";
 @import "pages/home";
+@import "pages/menu";
 
 // WIDGETS
 @import "widgets/menubar";
