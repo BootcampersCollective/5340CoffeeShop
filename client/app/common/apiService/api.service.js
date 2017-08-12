@@ -1,29 +1,37 @@
 function apiService($q, $http) {
-	// This variable is for service level storage, it will not survive a browser reload
-	// let variable = {};
-	const service = {
-		getMenu: getMenu,
-		setSomething: setSomething
-	};
-	return service;
+// This variable is for service level storage, it will not survive a browser reload
+// let variable = {};
+    const service = {
+        getMenu: getMenu,
+        getEvents: getEvents,
+        setSomething: setSomething,
+    };
+    return service;
 
-	function getMenu() {
-		return $http({
-			method: 'GET',
-			url: '/api/menu'
-		});
-	}
+    function getMenu() {
+        return $http({
+            method: 'GET',
+            url: '/api/menu'
+        });
+    }
 
-	function setSomething() {
+    function getEvents() {
+        return $http({
+            method: 'GET',
+            url: '/api/events'
+        });
+    }
 
-	}
+    function setSomething() {
 
-	function internalFunction() {
+    }
 
-	}
+    function internalFunction() {
+
+    }
 }
 
 angular.module('5340-site.common')
-	.factory('apiService', apiService);
+    .factory('apiService', apiService);
 
 apiService.$inject = ['$q', '$http'];

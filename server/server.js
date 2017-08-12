@@ -1,19 +1,17 @@
-var express = require('express'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
-    morgan = require ('morgan'),
-    routes = require('./controllers/routes'),
-    fileServer = express.static('public'),
-    fs = require('fs');
+const express = require('express'),
+      bodyParser = require('body-parser'),
+      fileServer = express.static('public'),
+      fs = require('fs'),
+      mongoose = require('mongoose'),
+      morgan = require ('morgan'),
+      routes = require('./controllers/routes');
 
+let app = express();
 
-var app = express();
-
-var PORT = process.env.port || 3000;
+let PORT = process.env.port || 3000;
 
 // include static routes for serving up static html files.
 app.use(fileServer);
-
 
 // setup the logger
 app.use(morgan('dev'));
