@@ -8,7 +8,7 @@ const express = require('express'),
 
 let app = express();
 
-let PORT = process.env.port || 3030;
+let PORT = process.env.port || 3000;
 
 // include static routes for serving up static html files.
 app.use(fileServer);
