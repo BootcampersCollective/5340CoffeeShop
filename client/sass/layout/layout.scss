@@ -33,12 +33,6 @@
         height: 80vh;
       }
     }
-
-    .container-footer {
-      height: 20vh;
-      width: 100%;
-      background-color: limegreen;
-    }
   }
 
   .container-right {
@@ -49,5 +43,9 @@
       height: 100vh;
       overflow-y: scroll;
     }
+  }
+
+  .container-footer {
+      background-color: #B99967;
   }
 }

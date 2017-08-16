@@ -7,15 +7,19 @@ const layoutComponent = {
 			console.log('init layout');
 		};
 	},
-	template: `<div class="container-main">
-    <div class="container-left">
-        <header-component></header-component>
-        <footer-component></footer-component>
-    </div>
-    <div class="container-right">
-        <body-component></body-component>
-    </div>
-</div>`
+	template: `
+		<div class="container-main">
+			<div class="container-left">
+				<header-component></header-component>
+			</div>
+			<div class="container-right">
+			<body-component></body-component>
+			</div>
+			<div class="container-footer">
+				<footer-component></footer-component>
+			</div>
+		</div>
+	`
 };
 
 angular.module('5340-site.layout')
