@@ -7,37 +7,32 @@ Repository for the 5340 Coffee and Events website.
 
 * Front End:
     - AngularJS 1.6.4 [Github](https://github.com/angular/angular.js) [Angular](https://angular.io/)
-    - Grunt [Homepage](https://gruntjs.com/)
+    - Gulp [Homepage](https://gulpjs.com/)
     - SASS/SCSS [SASS Homepage](http://sass-lang.com/)
 
 * Back End:
     - Node [Homepage](https://nodejs.org/en/)
 
 ## Contributing
-* To initially begin working on the project, you'll need to first reach out to Charlie Beck on [Slack](https://bootcamperscollective.slack.com) to be added to the team.
+* To initially begin working on the project, you'll need to first reach out to Charlie Beck on [Slack](https://bootcamperscollective.com) to be added to the team.
 
 
 * Once you have been added to the team, clone the repository to your machine making sure to develop of of the development branch.
 - To do this run the following:   
  - git clone <insert url>
- - git checkout development
+ - git checkout -b development
+ - git pull origin development
 
 
 * Next, you will need to install dependencies:
-    - npm install
+    - yarn
 
 
-* Now, you will need to build the code base using Grunt.
-    - grunt build
+* Now, you will need to build the code base using Gulp and launch the server.
+    - gulp
 
 
-* Finally, you will need to start the server.
-    - nodemon server.js
-
-
-- Please check the issues page, also if you would like, you can use [waffle.io](http://waffle.io)
-
-- If you would like to contribute please contact the Bootcampers collective via their slack channel.  (link to come soon)
+- Please check the issues page at [waffle.io](http://waffle.io)
 
 
 
@@ -54,4 +49,4 @@ Repository for the 5340 Coffee and Events website.
 
 5. Get Here -- This page should show a little explanation of where they are located with a link to maps, plus their address, contact info, and hours of operation, plus a map of where they are.
 
-6. Heres an example to base off of: http://www.twentyandsix.com.au/
+6. Heres an example to base off of: http://whatpixel.com/images/2016/coffee-cafe-websites/007-twenty-and-six.jpg
