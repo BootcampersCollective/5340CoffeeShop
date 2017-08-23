@@ -59,5 +59,8 @@ package-lock.json
 .env
 
 .idea
+*.iml
 .sass-cache
 public
+
+FBApiConstants.js
