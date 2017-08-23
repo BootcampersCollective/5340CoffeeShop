@@ -5,14 +5,12 @@ var express = require('express'),
     routes = require('./controllers/routes'),
     fs = require('fs');
 
+let app = express();
 
-var app = express();
-
-var PORT = process.env.port || 3000;
+let PORT = process.env.port || 3000;
 
 // include static routes for serving up static html files.
 app.use(express.static('public'));
-
 
 // setup the logger
 app.use(morgan('dev'));

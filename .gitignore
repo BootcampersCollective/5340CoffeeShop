@@ -62,3 +62,5 @@ package-lock.json
 *.iml
 .sass-cache
 public
+
+FBApiConstants.js
