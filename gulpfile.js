@@ -25,9 +25,7 @@ const INDEX_PATH = 'client/assets/index.html';
 gulp.task('lint', function () {
 	gulp.src(CLIENT_SCRIPTS_PATH)
 		.pipe(plugins.jshint())
-		.on('error', function(error) {
-			console.log('lintError', error);
-		});
+		.on('error', plugins.util.log);
 });
 
 // Images
@@ -40,6 +38,7 @@ gulp.task('copyImages', function () {
 	console.log('---Starting Copy Images task---');
 	return gulp.src([IMAGE_PATH])
 		.pipe(gulp.dest('public/images'))
+		.on('error', plugins.util.log)
 		.pipe(livereload());
 });
 
@@ -47,6 +46,7 @@ gulp.task('copyFonts', function () {
 	console.log('---Starting Copy Fonts task---');
 	return gulp.src([FONT_PATH])
 		.pipe(gulp.dest('public/fonts'))
+		.on('error', plugins.util.log)
 		.pipe(livereload());
 });
 
@@ -55,6 +55,7 @@ gulp.task('copyIndex', function () {
 	console.log('---Starting Copy Index task---');
 	return gulp.src([INDEX_PATH])
 		.pipe(gulp.dest('public'))
+		.on('error', plugins.util.log)
 		.pipe(livereload());
 });
 
@@ -63,15 +64,11 @@ gulp.task('styles', function () {
 	console.log('---Starting Styles task---');
 	return gulp.src('client/sass/main.scss')
 		.pipe(plugins.sourcemaps.init())
-		.on('error', plugins.util.log)
 		.pipe(plugins.autoprefixer())
-		.on('error', plugins.util.log)
 		.pipe(plugins.sass({
 			outputStyle: 'compressed'
 		}))
-		.on('error', plugins.util.log)
 		.pipe(plugins.sourcemaps.write())
-		.on('error', plugins.util.log)
 		.pipe(gulp.dest('public/styles'))
 		.on('error', plugins.util.log)
 		.pipe(livereload());
@@ -87,7 +84,7 @@ gulp.task('vendorScripts', function () {
 });
 
 // Client Scripts
-gulp.task('clientScripts', function () {
+gulp.task('clientScripts', ['lint'], function () {
 	console.log('---Starting Client Scripts task---');
 	return gulp.src(CLIENT_SCRIPTS_PATH)
 		.pipe(plugins.ngAnnotate())
