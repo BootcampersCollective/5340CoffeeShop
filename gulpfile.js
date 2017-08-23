@@ -10,7 +10,7 @@ let	browserSync = require('browser-sync').create();
 // let sourceMaps = require('gulp-sourcemaps');
 // let sass = require('gulp-sass');
 // let autoprefixer = require('gulp-autoprefixer');
-// let livereload = require('gulp-livereload');
+let livereload = require('gulp-livereload');
 // let debug = require('gulp-debug');
 
 // File paths
@@ -24,10 +24,17 @@ const VENDOR_SCRIPTS = [
 	'node_modules/angular-sanitize/angular-sanitize.js',
 ];
 const CLIENT_SCRIPTS_PATH = ['client/app/**/*.module.js', 'client/app/**/*.js'];
-const STYLE_PATH = 'client/app/**/*.scss';
-const IMAGE_PATH = 'assets/images/*';
-const FONT_PATH = 'assets/fonts/*';
-const INDEX_PATH = 'assets/index.html';
+const SERVER_SCRIPTS_PATH = ['server/**/*.js'];
+const STYLE_PATH = 'client/sass/**/*.scss';
+const IMAGE_PATH = 'client/assets/images/*';
+const FONT_PATH = 'client/assets/fonts/*';
+const INDEX_PATH = 'client/assets/index.html';
+
+// Lint
+gulp.task('lint', function () {
+	gulp.src(CLIENT_SCRIPTS_PATH)
+		.pipe(plugins.jshint());
+});
 
 // Images
 gulp.task('images', function () {
@@ -39,14 +46,14 @@ gulp.task('copyImages', function () {
 	console.log('---Starting Copy Images task---');
 	return gulp.src([IMAGE_PATH])
 		.pipe(gulp.dest('public/images'))
-		.pipe(browserSync.stream());
+		.pipe(livereload());
 });
 
 gulp.task('copyFonts', function () {
 	console.log('---Starting Copy Fonts task---');
 	return gulp.src([FONT_PATH])
 		.pipe(gulp.dest('public/fonts'))
-		.pipe(browserSync.stream());
+		.pipe(livereload());
 });
 
 // Index
@@ -54,7 +61,7 @@ gulp.task('copyIndex', function () {
 	console.log('---Starting Copy Index task---');
 	return gulp.src([INDEX_PATH])
 		.pipe(gulp.dest('public'))
-		.pipe(browserSync.stream());
+		.pipe(livereload());
 });
 
 // Styles
@@ -68,7 +75,7 @@ gulp.task('styles', function () {
 		}))
 		.pipe(plugins.sourcemaps.write())
 		.pipe(gulp.dest('public/styles'))
-		.pipe(browserSync.stream());
+		.pipe(livereload());
 });
 
 // Vendor Scripts
@@ -89,12 +96,25 @@ gulp.task('clientScripts', function () {
 		.pipe(plugins.babel({
 			presets: ['es2015']
 		}))
-		.pipe(plugins.concat('angular.bundle.js'))
+		.pipe(plugins.concat('bundle.js'))
 		.pipe(plugins.uglify())
 		.pipe(plugins.sourcemaps.write())
 		.pipe(gulp.dest('public/scripts'))
-		.pipe(browserSync.stream());
+		.pipe(livereload());
 });
+
+// Server Scripts
+gulp.task('serverScripts', function() {
+	console.log('---Starting Server Scripts task---');
+	return gulp.src([SERVER_SCRIPTS_PATH])
+		.pipe(livereload());
+});
+
+// gulp.task('server', function () {
+// 	console.log('---Starting Watch task---');
+// 	require('./server/server.js');
+// 	livereload.listen();
+// });
 
 gulp.task('clean', function() {
 	return del.sync([
@@ -104,6 +124,7 @@ gulp.task('clean', function() {
 
 // Default
 gulp.task('default', [
+	'lint',
 	'clean',
 	'copyFonts',
 	'copyImages',
@@ -111,26 +132,32 @@ gulp.task('default', [
 	'styles',
 	'vendorScripts',
 	'clientScripts',
-	'watch',
 	'serve'
 ], function () {
 	console.log('---Starting Default task---');
 });
 
-// Watch
-gulp.task('watch', function () {
-	console.log('---Starting Watch task---');
-	gulp.watch([STYLE_PATH], ['styles']);
-	gulp.watch(CLIENT_SCRIPTS_PATH, ['clientScripts']);
-	gulp.watch([INDEX_PATH], ['copyIndex']);
-});
+// // Watch
+// gulp.task('watch', function () {
+// 	console.log('---Starting Watch task---');
+// 	gulp.watch([STYLE_PATH], ['styles']);
+// 	gulp.watch(CLIENT_SCRIPTS_PATH, ['clientScripts']);
+// 	gulp.watch([INDEX_PATH], ['copyIndex']);
+// });
 
 // Serve
 gulp.task('serve', function() {
-	browserSync.init({
-		server: {
-			baseDir: './server'
-		}
-	});
-	gulp.watch('*.html').on('change', browserSync.reload);
+	// browserSync.init({
+	// 	proxy: 'localhost:3000'
+	// });
+	// gulp.watch('*.html').on('change', browserSync.reload);
+
+	console.log('---Starting Serve task---');
+	require('./server/server.js');
+	livereload.listen();
+	gulp.watch(INDEX_PATH, ['copyIndex']);
+	gulp.watch(IMAGE_PATH, ['copyImage']);
+	gulp.watch(CLIENT_SCRIPTS_PATH, ['clientScripts']);
+	gulp.watch(STYLE_PATH, ['styles']);
+	gulp.watch(SERVER_SCRIPTS_PATH, ['serverScripts']);
 });
