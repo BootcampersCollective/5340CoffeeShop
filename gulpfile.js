@@ -2,16 +2,7 @@ let gulp = require('gulp');
 let del = require('del');
 let plugins = require('gulp-load-plugins')();
 let	browserSync = require('browser-sync').create();
-// let gutil = require('gulp-util');
-// let babel = require('gulp-babel');
-// let concat = require('gulp-concat');
-// let ngAnnotate = require('gulp-ng-annotate');
-// let uglify = require('gulp-uglify');
-// let sourceMaps = require('gulp-sourcemaps');
-// let sass = require('gulp-sass');
-// let autoprefixer = require('gulp-autoprefixer');
 let livereload = require('gulp-livereload');
-// let debug = require('gulp-debug');
 
 // File paths
 const VENDOR_SCRIPTS = [
@@ -33,7 +24,10 @@ const INDEX_PATH = 'client/assets/index.html';
 // Lint
 gulp.task('lint', function () {
 	gulp.src(CLIENT_SCRIPTS_PATH)
-		.pipe(plugins.jshint());
+		.pipe(plugins.jshint())
+		.on('error', function(error) {
+			console.log('lintError', error);
+		});
 });
 
 // Images
@@ -67,14 +61,19 @@ gulp.task('copyIndex', function () {
 // Styles
 gulp.task('styles', function () {
 	console.log('---Starting Styles task---');
-	return gulp.src('client/sass/style.scss')
+	return gulp.src('client/sass/main.scss')
 		.pipe(plugins.sourcemaps.init())
+		.on('error', plugins.util.log)
 		.pipe(plugins.autoprefixer())
+		.on('error', plugins.util.log)
 		.pipe(plugins.sass({
 			outputStyle: 'compressed'
 		}))
+		.on('error', plugins.util.log)
 		.pipe(plugins.sourcemaps.write())
+		.on('error', plugins.util.log)
 		.pipe(gulp.dest('public/styles'))
+		.on('error', plugins.util.log)
 		.pipe(livereload());
 });
 
