@@ -17,12 +17,9 @@ Repository for the 5340 Coffee and Events website.
 * To initially begin working on the project, you'll need to first reach out to Charlie Beck on [Slack](https://bootcamperscollective.com) to be added to the team.
 
 
-* Once you have been added to the team, clone the repository to your machine making sure to develop of of the development branch.
-- To do this run the following:   
+* Once you have been added to the team, clone the repository to your machine.
+ - To do this run the following:   
  - git clone <insert url>
- - git checkout -b development
- - git pull origin development
-
 
 * Next, you will need to install dependencies:
     - yarn
@@ -30,6 +27,9 @@ Repository for the 5340 Coffee and Events website.
 
 * Now, you will need to build the code base using Gulp and launch the server.
     - gulp
+
+* Finally, to begin working on a particular issue, you'll need to branch off of the development branch, write the code to solve the issue, then submit a PR into the development branch. You should use the naming convention [issue-number]-[page]-[quick description].
+    - git checkout -b [new branch name] 
 
 
 - Please check the issues page at [waffle.io](http://waffle.io)
