@@ -3,7 +3,7 @@ function coffeeMenuBar() {
 		link: link,
 		restrict: 'EA',
 		template: `<div class="menu-bar">
-                <a href="app.home" target="_blank"><div id="nav-img"></div></a>
+                <a href="app.home"><div id="nav-img"></div></a>
     <coffee-menu-button data="{{button}}" ng-repeat="button in menuButtons"></div>
 		<div><a href="https://www.facebook.com/5340Coffee/" target="_blank"><img src="images/facebook.png" alt="facebook" /></a>
 		<a href="https://twitter.com/40weightarvada?lang=en" target="_blank"><img src="images/twitter.png" alt="twitter" /></a>
