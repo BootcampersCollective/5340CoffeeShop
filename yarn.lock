@@ -3122,6 +3122,10 @@ ng-annotate@^1.2.1:
     stringset "~0.2.1"
     tryor "~0.1.2"
 
+node-cli@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/node-cli/-/node-cli-0.1.0.tgz#264c4126f8e858562d0296a677914fd709786f7a"
+
 node-gyp@^3.3.1:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"
