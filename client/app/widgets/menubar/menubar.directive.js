@@ -17,10 +17,6 @@ function coffeeMenuBar() {
 	function link(scope, element, attrs) {
 		scope.menuButtons = [
 			{
-				name: 'Home',
-				sref: 'app.home'
-			},
-			{
 				name: 'About',
 				sref: 'app.about'
 			},
