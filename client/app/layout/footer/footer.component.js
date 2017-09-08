@@ -15,9 +15,9 @@ const footerComponent = {
 
 	},
 
-	template:`<div class="container-footer">footer
+	template:`<address><div class="container-footer">
 		          <p>6474 Ward Rd, Arvada, CO 80004. Today is {{$ctrl.date | date:'EEEE, MMMM d, y'}}. We are {{$ctrl.storeHours}}</p>
-	          </div>`
+	          </div></address>`
 };
 
 angular.module('5340-site.layout')
