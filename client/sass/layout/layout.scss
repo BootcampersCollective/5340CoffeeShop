@@ -12,11 +12,15 @@
     display: flex;
     flex-direction: row;
     height: 92.9vh;
+    margin-left: 15px;
     .container-left {
       flex: 0 0 auto;
       flex-direction: column;
       align-items: center;
       display: flex;
+      background-image: url("/images/banner.gif");
+      background-size:cover;
+
 
       @include breakpoint($bp-768) {
         flex: 0 0 200px;
@@ -24,11 +28,23 @@
         justify-content: stretch;
       }
 
+      coffee-menu-button a {
+        position:relative;
+        left:20px;
+        text-decoration:none;
+      }
+
+      .social-media-links {
+        position:relative;
+        padding: 5px;
+        left:5px;
+      }
+
       .container-menu {
         height: 150px;
         width: 100%;
-        background-color: #31b0d5;
 
+        
         @include breakpoint($bp-768) {
           height: 50vh;
         }
@@ -47,7 +63,11 @@
   }
 
   .container-footer {
-    flex: 0 0 5vh;
-    background-color: #B99967;
+    flex: 0 0 8vh;
+    background-color: #e3d6c5;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    padding:5px 0 0 0;
   }
 }
