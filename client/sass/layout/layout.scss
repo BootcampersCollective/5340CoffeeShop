@@ -17,6 +17,9 @@
       flex-direction: column;
       align-items: center;
       display: flex;
+      background-image: url("/images/Artboard1.gif");
+      background-size:cover;
+
 
       @include breakpoint($bp-768) {
         flex: 0 0 200px;
@@ -24,11 +27,23 @@
         justify-content: stretch;
       }
 
+      coffee-menu-button a {
+        position:relative;
+        left:20px;
+        text-decoration:none;
+      }
+
+      .social-media-links {
+        position:relative;
+        padding: 5px;
+        left:5px;
+      }
+
       .container-menu {
         height: 150px;
         width: 100%;
-        background-color: #31b0d5;
 
+        
         @include breakpoint($bp-768) {
           height: 50vh;
         }
