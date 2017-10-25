@@ -1,8 +1,8 @@
 let gulp = require('gulp');
 let del = require('del');
+let bs = require('browser-sync').create();
+let rs = require('gulp-run-sequence');
 let plugins = require('gulp-load-plugins')();
-let browserSync = require('browser-sync').create();
-let livereload = require('gulp-livereload');
 
 // File paths
 const VENDOR_SCRIPTS = [
@@ -21,36 +21,37 @@ const IMAGE_PATH = 'client/assets/images/*';
 const FONT_PATH = 'client/assets/fonts/*';
 const INDEX_PATH = 'client/assets/index.html';
 
-// Lint
-gulp.task('lint', function() {
-  gulp
-    .src(CLIENT_SCRIPTS_PATH)
-    .pipe(plugins.jshint())
-    .on('error', plugins.util.log);
-});
+function onError(err) {
+  plugins.util.log(
+    plugins.util.colors.red('\nError (' + err.plugin + '): ' + err.message)
+  );
+  this.emit('end');
+}
 
-// Images
-gulp.task('images', function() {
-  console.log('---Starting Images task---');
-});
-
-// Assets
+// ===============================================
+// ASSETS
 gulp.task('copyImages', function() {
   console.log('---Starting Copy Images task---');
   return gulp
     .src([IMAGE_PATH])
-    .pipe(gulp.dest('public/images'))
-    .on('error', plugins.util.log)
-    .pipe(livereload());
+    .pipe(
+      plugins.plumber({
+        errorHandler: onError
+      })
+    )
+    .pipe(gulp.dest('public/images'));
 });
 
 gulp.task('copyFonts', function() {
   console.log('---Starting Copy Fonts task---');
   return gulp
     .src([FONT_PATH])
-    .pipe(gulp.dest('public/fonts'))
-    .on('error', plugins.util.log)
-    .pipe(livereload());
+    .pipe(
+      plugins.plumber({
+        errorHandler: onError
+      })
+    )
+    .pipe(gulp.dest('public/fonts'));
 });
 
 // Index
@@ -58,16 +59,27 @@ gulp.task('copyIndex', function() {
   console.log('---Starting Copy Index task---');
   return gulp
     .src([INDEX_PATH])
-    .pipe(gulp.dest('public'))
-    .on('error', plugins.util.log)
-    .pipe(livereload());
+    .pipe(
+      plugins.plumber({
+        errorHandler: onError
+      })
+    )
+    .pipe(gulp.dest('public'));
 });
+// END ASSETS
+// ===============================================
 
-// Styles
+// ===============================================
+// STYLES
 gulp.task('styles', function() {
   console.log('---Starting Styles task---');
   return gulp
     .src('client/sass/main.scss')
+    .pipe(
+      plugins.plumber({
+        errorHandler: onError
+      })
+    )
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.autoprefixer())
     .pipe(
@@ -77,11 +89,25 @@ gulp.task('styles', function() {
     )
     .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest('public/styles'))
-    .on('error', plugins.util.log)
-    .pipe(livereload());
+    .pipe(bs.stream());
+});
+// END STYLES
+// ===============================================
+
+// ===============================================
+// SCRIPTS
+// Lint
+gulp.task('lint', function() {
+  gulp
+    .src(CLIENT_SCRIPTS_PATH)
+    .pipe(
+      plugins.plumber({
+        errorHandler: onError
+      })
+    )
+    .pipe(plugins.jshint());
 });
 
-// Vendor Scripts
 gulp.task('vendorScripts', function() {
   console.log('---Starting Vendor Scripts task---');
   return gulp
@@ -106,66 +132,103 @@ gulp.task('clientScripts', ['lint'], function() {
     .pipe(plugins.concat('bundle.js'))
     .pipe(plugins.uglify())
     .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest('public/scripts'))
-    .pipe(livereload());
+    .pipe(gulp.dest('public/scripts'));
 });
-
-// Server Scripts
-gulp.task('serverScripts', function() {
-  console.log('---Starting Server Scripts task---');
-  return gulp.src([SERVER_SCRIPTS_PATH]).pipe(livereload());
-});
-
-// gulp.task('server', function () {
-// 	console.log('---Starting Watch task---');
-// 	require('./server/server.js');
-// 	livereload.listen();
-// });
+// END SCRIPTS
+// ===============================================
 
 gulp.task('clean', function() {
   return del.sync(['public/']);
 });
 
-// Default
-gulp.task(
-  'default',
-  [
-    'lint',
-    'clean',
-    'copyFonts',
-    'copyImages',
-    'copyIndex',
-    'styles',
-    'vendorScripts',
-    'clientScripts',
-    'serve'
-  ],
-  function() {
-    console.log('---Starting Default task---');
-  }
-);
+// ===============================================
+// SERVER
+gulp.task('server', function() {
+  console.log('---Starting Server Scripts task---');
+  let serverStarted = false;
+  return plugins
+    .nodemon({
+      script: './server/server.js',
+      ext: './server/**/*.js',
+      env: {
+        NODE_ENV: 'development'
+      },
+      watch: [SERVER_SCRIPTS_PATH]
+    })
+    .on('start', function() {
+      if (!serverStarted) {
+        console.log('---- Server Initial Start ----');
+        serverStarted = true;
+        cb();
+      }
+    })
+    .on('restart', function() {
+      console.log('---- Server restart ----');
+      bs.reload();
+    })
+    .once('quit', function() {
+      console.log('---- Server exiting ----');
+      process.exit();
+    });
+});
+// END SERVER
+// ===============================================
 
-// // Watch
-// gulp.task('watch', function () {
-// 	console.log('---Starting Watch task---');
-// 	gulp.watch([STYLE_PATH], ['styles']);
-// 	gulp.watch(CLIENT_SCRIPTS_PATH, ['clientScripts']);
-// 	gulp.watch([INDEX_PATH], ['copyIndex']);
-// });
+// ===============================================
+// BROWSER SYNC
+gulp.task('browser-sync', ['server'], function() {
+  bs.init(null, {
+    proxy: 'http://localhost:3000',
+    port: 3001,
+    notify: false,
+    reloadDelay: 1500
+  });
+});
+// END BROWSER SYNC
+// ===============================================
 
-// Serve
-gulp.task('serve', function() {
-  // browserSync.init({
-  // 	proxy: 'localhost:3000'
-  // });
-  // gulp.watch('*.html').on('change', browserSync.reload);
-
-  console.log('---Starting Serve task---');
-  require('./server/server.js');
-  livereload.listen();
+// ===============================================
+// WATCH
+gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(INDEX_PATH, ['copyIndex']);
   gulp.watch(IMAGE_PATH, ['copyImage']);
-  gulp.watch(CLIENT_SCRIPTS_PATH, ['clientScripts']);
+  gulp
+    .watch(CLIENT_SCRIPTS_PATH, ['clientScripts-watch'])
+    .on('change', bs.reload);
   gulp.watch(STYLE_PATH, ['styles']);
-  gulp.watch(SERVER_SCRIPTS_PATH, ['serverScripts']);
 });
+
+gulp.task('clientScripts-watch', ['clientScripts'], function(done) {
+  bs.reload();
+});
+// END WATCH
+// ===============================================
+
+// ===============================================
+// RUN SEQUENCE
+gulp.task('run-seq', function(cb) {
+  rs(
+    'clean',
+    [
+      'lint',
+      'copyFonts',
+      'copyImages',
+      'copyIndex',
+      'styles',
+      'vendorScripts',
+      'clientScripts'
+    ],
+    'watch',
+    cb
+  );
+});
+// END RUN SEQUENCE
+// ===============================================
+
+// ===============================================
+// DEFAULT
+gulp.task('default', ['run-seq'], function() {
+  console.log('---Starting Default task---');
+});
+// END DEFAULT
+// ===============================================
