@@ -20,7 +20,7 @@
     "body-parser": "^1.17.2",
     "bootstrap": "3.3.7",
     "colors": "^1.1.2",
-    "express": "^4.15.3",
+    "express": "^4.16.2",
     "jquery": "^3.2.1",
     "mongoose": "^4.10.0",
     "morgan": "^1.8.1",
