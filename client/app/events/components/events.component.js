@@ -27,7 +27,7 @@ const events = {
     <div>
         <section ng-repeat="(key, value) in $ctrl.events">
             <div><b>{{ value.name }}</b></div>
-            <div>Time: {{ value.start_time }} - {{ value.end_time }}</div>
+            <span>{{ value.start_time | date:"MM/dd/yyyy 'at' h:mma"}}</span> - <span>{{ value.end_time | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
             <div>Description: {{ value.description }}</div>
             <hr/>
         </section>
