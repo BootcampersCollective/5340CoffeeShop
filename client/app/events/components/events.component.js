@@ -10,6 +10,18 @@ const events = {
           // Store array of JSON events.
           ctrl.events = res.data;
           console.log(ctrl.events);
+//          Data to compare dates
+
+//          ctrl.events.forEach(date => {
+//            let currentDate = new Date();
+//            let todayDate = currentDate.getFullYear()+'-'+(currentDate.getMonth()+1)+'-'+currentDate.getDate();
+//            let eventDate = date.start_time.split("T").slice(0,1).join();
+////            console.log(todayDate)
+////            console.log(eventDate)
+//            if (todayDate > eventDate) {
+//              eventDate;
+//            }
+          })
         })
         .then(function(data, status) {
           console.log('Data: ', data);
