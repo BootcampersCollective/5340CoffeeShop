@@ -8,10 +8,11 @@ module.exports = {
 
         request(url, (err, response, body) => {
             if(!err && response.statusCode == 200) {
-                res.json((JSON.parse(body)).data);
+              res.json((JSON.parse(body)).data);
             } else {
                 console.log("ERROR: ", err);
             }
         });
     }
 };
+

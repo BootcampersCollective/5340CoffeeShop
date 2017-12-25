@@ -9,7 +9,6 @@ const events = {
         .then(function(res) {
           // Store array of JSON events.
           ctrl.events = res.data;
-          console.log(ctrl.events);
         })
         .then(function(data, status) {
           console.log('Data: ', data);
@@ -25,14 +24,25 @@ const events = {
         {{ $ctrl.events[0].place.location.state }} {{ $ctrl.events[0].place.location.zip }}
     </h4>
     <div>
-        <section ng-repeat="(key, value) in $ctrl.events">
+        <section ng-repeat="(key, value) in $ctrl.events" ng-if='value.start_time > "value.start_time" ' >
             <div><b>{{ value.name }}</b></div>
-            <div>Time: {{ value.start_time }} - {{ value.end_time }}</div>
+            <span>{{ value.start_time | date:"MM/dd/yyyy 'at' h:mma"}}</span> - <span>{{ value.end_time | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
             <div>Description: {{ value.description }}</div>
             <hr/>
         </section>
+    </div>
+    <div ng-else>
+      <h2> Send us an email to schedule an event </h2>
+      <a href="mailto:info@40weightcoffee.com" target="_blank"><img src="images/email.png" alt="email"></a>
     </div>
   `
 };
 
 angular.module('5340-site.events').component('events', events);
+
+
+
+
+
+
+
